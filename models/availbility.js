@@ -1,6 +1,6 @@
 // be/models/Availability.js
 
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const availabilitySchema = new mongoose.Schema({
     professor_id: {
@@ -16,7 +16,7 @@ const availabilitySchema = new mongoose.Schema({
         type: [String], // Array of time slots in "HH:mm" format
         validate: {
             validator: (v) => Array.isArray(v) && v.length > 0,
-            message: "Time slots should be a non-empty array.",
+            message: "Time slots should not be empty.",
         },
         required: true,
     },
