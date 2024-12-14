@@ -9,7 +9,7 @@ const {bookAppointment,cancelAppointment,getAppointments,}
 
 const router = express.Router();
 
-router.post("/",authenticate, roleAuthorization(["student"]),validate(appointmentSchema),bookAppointment);
+router.post("/addappointment",authenticate, roleAuthorization(["student"]),validate(appointmentSchema),bookAppointment);
 
 router.delete("/:appointmentId",authenticate,roleAuthorization(["professor"]),cancelAppointment);
 

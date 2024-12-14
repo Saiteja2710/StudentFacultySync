@@ -8,7 +8,7 @@ const { addSlots: addAvailability, getSlots: getAvailability } = require('../con
 
 const router = express.Router();
 
-router.post("/",authenticate,roleAuthorization(["professor"]),validate(availabilitySchema),addAvailability);
+router.post("/addslots",authenticate,roleAuthorization(["professor"]),validate(availabilitySchema),addAvailability);
 
 router.get("/:professorId", authenticate, roleAuthorization(["student"]), getAvailability);
 
